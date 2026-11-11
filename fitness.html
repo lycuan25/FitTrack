@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fitness.css">
+    <title>FitTrack | Fitness & Wellness</title>
+
+</head>
+
+<body>
+ 
+    <header class="header">
+
+        <a href="#home" class="logo">
+            <span>✦</span> FITTRACK
+        </a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#bmi">BMI Calculator</a>
+            <a href="#calories">Calories</a>
+            <a href="#water">Water Tracker</a>
+        </nav>
+
+        <a href="#calculators" class="header-btn">Get Started →</a>
+
+    </header>
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="hero-label">YOUR FITNESS JOURNEY STARTS HERE</p>
+
+            <h1>Build a Stronger<br>
+                <span>Healthier You.</span>
+            </h1>
+
+            <p class="hero-description">
+                Understand your body, track your progress and
+                create healthier habits with your personal
+                fitness dashboard.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#calculators" class="primary-btn">
+                    Explore Tools →
+                </a>
+
+                <a href="#about" class="secondary-btn">
+                    Learn More
+                </a>
+
+            </div>
+
+            <div class="hero-stats">
+
+                <div>
+                    <h3>3+</h3>
+                    <p>Fitness Tools</p>
+                </div>
+
+                <div>
+                    <h3>24/7</h3>
+                    <p>Track Your Habits</p>
+                </div>
+
+                <div>
+                    <h3>100%</h3>
+                    <p>Your Journey</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1000"
+                alt="Modern fitness gym">
+
+            <div class="floating-card">
+                <span>🔥</span>
+                <div>
+                    <h3>Stay Consistent</h3>
+                    <p>Small steps. Big results.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="calculators" class="dashboard">
+
+        <div class="section-heading">
+
+            <p class="section-label">YOUR PERSONAL DASHBOARD</p>
+
+            <h2>Know Your Numbers</h2>
+
+            <p>
+                Get a simple overview of your health and daily goals.
+            </p>
+
+        </div>
+
+
+        <div class="overview-grid">
+
+            <div class="overview-card">
+
+                <span class="overview-icon">⚖️</span>
+
+                <p>Your BMI</p>
+
+                <h2 id="overviewBMI">--</h2>
+
+                <small id="overviewBMIStatus">Calculate your BMI</small>
+
+            </div>
+
+
+            <div class="overview-card">
+
+                <span class="overview-icon">🔥</span>
+
+                <p>Daily Calories</p>
+
+                <h2 id="overviewCalories">--</h2>
+
+                <small>Estimated maintenance calories</small>
+
+            </div>
+
+
+            <div class="overview-card">
+
+                <span class="overview-icon">💧</span>
+
+                <p>Water Progress</p>
+
+                <h2 id="overviewWater">0%</h2>
+
+                <small>Daily hydration goal</small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BMI CALCULATOR -->
+
+    <section id="bmi" class="tool-section">
+
+        <div class="tool-container">
+
+            <div class="tool-description">
+
+                <p class="section-label">01 / BODY ANALYSIS</p>
+
+                <h2>BMI Calculator</h2>
+
+                <p>
+                    Calculate your Body Mass Index using your
+                    height and weight. BMI is a simple screening
+                    measure, not a diagnosis of your health.
+                </p>
+
+                <div class="tool-benefit">
+                    <span>✓</span>
+                    Understand your BMI category
+                </div>
+
+                <div class="tool-benefit">
+                    <span>✓</span>
+                    Get your calculated BMI value
+                </div>
+
+                <div class="tool-benefit">
+                    <span>✓</span>
+                    Track your body measurements
+                </div>
+
+            </div>
+
+
+            <div class="calculator-card">
+
+                <h3>Calculate Your BMI</h3>
+
+                <p class="card-subtitle">
+                    Enter your measurements below.
+                </p>
+
+                <form id="bmiForm">
+
+                    <label for="bmiWeight">
+                        Weight (kg)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="bmiWeight"
+                        placeholder="Example: 75"
+                        min="1"
+                        max="500"
+                        step="0.1"
+                        required>
+
+
+                    <label for="bmiHeight">
+                        Height (cm)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="bmiHeight"
+                        placeholder="Example: 180"
+                        min="50"
+                        max="300"
+                        step="0.1"
+                        required>
+
+
+                    <button type="submit" class="calculate-btn">
+                        Calculate BMI →
+                    </button>
+
+                </form>
+
+
+                <div id="bmiResult" class="result-box" aria-live="polite">
+
+                    <p>Your BMI Result</p>
+
+                    <h2 id="bmiValue">--</h2>
+
+                    <h3 id="bmiCategory">Waiting for calculation</h3>
+
+                    <p id="bmiMessage">
+                        Enter your details to see your result.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CALORIE CALCULATOR -->
+
+    <section id="calories" class="tool-section calorie-section">
+
+        <div class="tool-container">
+
+            <div class="tool-description">
+
+                <p class="section-label">02 / DAILY ENERGY</p>
+
+                <h2>Calorie Estimator</h2>
+
+                <p>
+                    Estimate your daily energy needs based on
+                    your age, body measurements, activity level
+                    and fitness goal.
+                </p>
+
+                <div class="tool-benefit">
+                    <span>✓</span>
+                    Estimate your daily calorie needs
+                </div>
+
+                <div class="tool-benefit">
+                    <span>✓</span>
+                    Choose your fitness goal
+                </div>
+
+                <div class="tool-benefit">
+                    <span>✓</span>
+                    Understand your energy requirements
+                </div>
+
+            </div>
+
+
+            <div class="calculator-card">
+
+                <h3>Daily Calorie Calculator</h3>
+
+                <p class="card-subtitle">
+                    Enter your personal information.
+                </p>
+
+                <form id="calorieForm">
+
+                    <div class="form-row">
+
+                        <div>
+                            <label for="age">Age</label>
+
+                            <input
+                                type="number"
+                                id="age"
+                                placeholder="Age"
+                                min="15"
+                                max="100"
+                                required>
+                        </div>
+
+                        <div>
+                            <label for="gender">Sex used in formula</label>
+
+                            <select id="gender" required>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div>
+                            <label for="calWeight">Weight (kg)</label>
+
+                            <input
+                                type="number"
+                                id="calWeight"
+                                placeholder="75"
+                                min="1"
+                                max="500"
+                                step="0.1"
+                                required>
+                        </div>
+
+                        <div>
+                            <label for="calHeight">Height (cm)</label>
+
+                            <input
+                                type="number"
+                                id="calHeight"
+                                placeholder="180"
+                                min="50"
+                                max="300"
+                                step="0.1"
+                                required>
+                        </div>
+
+                    </div>
+
+
+                    <label for="activity">
+                        Activity Level
+                    </label>
+
+                    <select id="activity" required>
+
+                        <option value="1.2">
+                            Sedentary — Little or no exercise
+                        </option>
+
+                        <option value="1.375">
+                            Light — Exercise 1–3 days/week
+                        </option>
+
+                        <option value="1.55">
+                            Moderate — Exercise 3–5 days/week
+                        </option>
+
+                        <option value="1.725">
+                            Active — Exercise 6–7 days/week
+                        </option>
+
+                        <option value="1.9">
+                            Very Active — Intense daily activity
+                        </option>
+
+                    </select>
+
+
+                    <label for="goal">
+                        Your Fitness Goal
+                    </label>
+
+                    <select id="goal" required>
+
+                        <option value="lose">Lose Weight</option>
+
+                        <option value="maintain" selected>
+                            Maintain Weight
+                        </option>
+
+                        <option value="gain">Gain Weight</option>
+
+                    </select>
+
+
+                    <button type="submit" class="calculate-btn">
+                        Estimate My Calories →
+                    </button>
+
+                </form>
+
+
+                <div id="calorieResult" class="result-box" aria-live="polite">
+
+                    <p>Estimated Daily Calories</p>
+
+                    <h2 id="calorieValue">--</h2>
+
+                    <h3 id="calorieGoal">Your goal will appear here</h3>
+
+                    <p id="calorieMessage">
+                        Complete the form to get your estimate.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WATER TRACKER -->
+
+    <section id="water" class="water-section">
+
+        <div class="section-heading">
+
+            <p class="section-label">03 / DAILY HYDRATION</p>
+
+            <h2>Stay Hydrated 💧</h2>
+
+            <p>
+                Track your daily water intake and build a healthy habit.
+            </p>
+
+        </div>
+
+
+        <div class="water-container">
+
+            <div class="water-left">
+
+                <h3>Your Daily Water Goal</h3>
+
+                <p>
+                    Enter your weight to calculate an approximate
+                    daily water target.
+                </p>
+
+                <label for="waterWeight">
+                    Your Weight (kg)
+                </label>
+
+                <input
+                    type="number"
+                    id="waterWeight"
+                    placeholder="Example: 75"
+                    min="1"
+                    max="500"
+                    step="0.1">
+
+                <button id="setWaterGoal" class="calculate-btn">
+                    Calculate Water Goal
+                </button>
+
+                <div class="water-goal-display">
+
+                    <p>YOUR DAILY TARGET</p>
+
+                    <h2 id="waterGoal">-- <span>ml</span></h2>
+
+                    <small>Approximate daily target</small>
+
+                </div>
+
+            </div>
+
+
+            <div class="water-right">
+
+                <h3>Today's Water Intake</h3>
+
+                <p class="water-subtitle">
+                    Keep drinking throughout your day.
+                </p>
+
+                <div class="water-progress">
+
+                    <div class="water-progress-inner">
+
+                        <h2 id="waterPercentage">0%</h2>
+
+                        <p>Completed</p>
+
+                    </div>
+
+                </div>
+
+                <h3 id="waterAmount">0 ml / 0 ml</h3>
+
+                <p class="water-subtitle">
+                    Choose how much water you drank.
+                </p>
+
+                <div class="water-buttons">
+
+                    <button class="water-add" data-amount="250">
+                        + 250 ml
+                    </button>
+
+                    <button class="water-add" data-amount="500">
+                        + 500 ml
+                    </button>
+
+                    <button class="water-add" data-amount="750">
+                        + 750 ml
+                    </button>
+
+                </div>
+
+                <button id="removeWater" class="remove-water">
+                    − Remove 250 ml
+                </button>
+
+                <button id="resetWater" class="reset-water">
+                    Reset Today's Intake
+                </button>
+
+                <p id="waterMessage" aria-live="polite">
+                    Set your water goal to get started.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+
+    <section id="about" class="about-section">
+
+        <p class="section-label">A HEALTHIER LIFESTYLE</p>
+
+        <h2>Small Habits. Big Changes.</h2>
+
+        <p>
+            Fitness is not about perfection. It is about consistency,
+            understanding your body and making better choices every day.
+        </p>
+
+        <div class="about-cards">
+
+            <div>
+                <span>🏃</span>
+                <h3>Stay Active</h3>
+                <p>Move your body and build strength over time.</p>
+            </div>
+
+            <div>
+                <span>🥗</span>
+                <h3>Eat Better</h3>
+                <p>Choose balanced meals that support your goals.</p>
+            </div>
+
+            <div>
+                <span>💤</span>
+                <h3>Rest Well</h3>
+                <p>Give your body enough time to recover.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+                <h2>FITTRACK<span>.</span></h2>
+
+                <p>
+                    Your personal companion for a healthier lifestyle.
+                </p>
+            </div>
+
+            <div>
+                <h3>Explore</h3>
+
+                <a href="#home">Home</a>
+                <a href="#bmi">BMI Calculator</a>
+                <a href="#calories">Calorie Estimator</a>
+                <a href="#water">Water Tracker</a>
+            </div>
+
+            <div>
+                <h3>Remember</h3>
+
+                <p>Stay consistent.</p>
+                <p>Be patient.</p>
+                <p>Take care of yourself.</p>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            <p>© 2026 FitTrack. All Rights Reserved.</p>
+        </div>
+
+    </footer>
+
+
+    <script src="fitness.js"></script>
+
+</body>
+</html>
